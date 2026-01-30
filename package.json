@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KJeansGR/Portfolio-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/KJeansGR/Portfolio-Project/issues"
+  },
+  "homepage": "https://github.com/KJeansGR/Portfolio-Project#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
