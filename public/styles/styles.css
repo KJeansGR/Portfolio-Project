@@ -1,0 +1,110 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;  
+    background-color: whitesmoke;
+}
+body{
+    margin: 0 auto;
+    box-sizing: border-box;
+    justify-items: center;
+}
+body *{
+    border-radius: .1255rem;
+    border-color: rgba(0, 0, 0, 0.25);
+    border-width: .1rem;
+}
+
+
+label{
+    font-size: larger;
+    font-weight: bold;
+}
+input{
+    width: fit-content;
+}
+#contact-form{
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 3fr;
+    grid-template-areas:
+    "fn ln j"
+    "c li e"
+    "m m m"
+    "ta ta ta"
+    "ft ft ."
+    "sb . .";
+}
+form div{
+    display: flex;
+    flex-direction: column;
+}
+
+
+#f-name-div{
+    grid-area: fn;
+}
+#l-name-div{
+    grid-area: ln;
+}
+#job-div{
+    grid-area: j;
+}
+#company-div{
+    grid-area: c;
+}
+#LinkedIn-div{
+    grid-area: li;
+}
+#email-div{
+    grid-area: e;
+}
+#text-area-div{
+    grid-area: ta;
+}
+#final-toggles-div{
+    grid-area: ft;
+}
+#sub-btn{
+    grid-area: sb;
+    background-color:  limegreen;
+    color: white;
+    border: none;
+    font-size: large;
+    padding: .75rem 0rem;
+    box-shadow: 0 0 .25rem black;
+    transition: all .175s ease-in-out;
+}
+button:hover{
+    transform: scale(.975);
+    opacity: 50%;
+}
+button:active{
+    transform: scale(.9);
+    opacity: 50%;
+}
+
+
+#format-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#text-area-div textarea{
+    height: 20vh;
+}
+#met-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-area: m;
+    gap: 1rem;
+}
+#met-other-div input{
+width: 90%;
+}
+
+.err{
+    font-size: clamp(.75rem, 1vw, 1rem);
+    font-weight: 300;
+    display: none;
+    color: crimson;
+}

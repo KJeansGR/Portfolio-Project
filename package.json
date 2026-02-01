@@ -20,5 +20,8 @@
   "homepage": "https://github.com/KJeansGR/Portfolio-Project#readme",
   "dependencies": {
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
