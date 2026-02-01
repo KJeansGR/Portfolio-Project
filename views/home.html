@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" href="/styles/styles.css">
+    <link rel="icon" href="/images/chat.png">
     <script src="/js/contactform.js" defer></script>
-    <title>Portfolio Assignment</title>
+    <title>Portfolio Assignment 3</title>
 </head>
 <body>   
     <h1>Contact Form</h1>
@@ -51,7 +52,7 @@
         <section id="met-section">
             <div id="met-select-div">
                 <label>How We Met
-                    <span id="err-met" class="err">Field Required</span>
+                    <span id="err-met" class="err">Field Required or Specify Other</span>
                 </label>
                 <select name="met-select" id="met-select">
                     <option value="none">--Choose--</option>
@@ -60,8 +61,8 @@
                 </select>
             </div>
             <div id="met-other-div">
-                <label for="other-met">Other (Please Specify)
-                    <span id="err-met-other" class="err">Field Required</span>
+                <label for="other-met">Other (<span id="other-met-specify">Please Specify </span>)
+                    <span id="err-met-other" class="err">Field Required or Select from menu</span>
                 </label>
                 <input type="text" name="other-met" id="other-met">
             </div>
