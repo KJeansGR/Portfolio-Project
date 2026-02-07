@@ -85,7 +85,7 @@ button:active{
 
 
 #format-div{
-    display: flex;
+    display: none;
     flex-direction: row;
     align-items: center;
 }
