@@ -15,6 +15,7 @@ let formatOptions = document.getElementById("format-div");
     let radioHtml = document.getElementById("html");
     let radioText = document.getElementById("text");
 
+
     let isValid = true;
     ResetErrors();
     
@@ -74,6 +75,10 @@ MailListToggle.addEventListener('change', (e) => {
         formatOptions.style.display = "flex";
     } 
     else {
+        
+        let radioHtml = document.getElementById("html");
+        let radioText = document.getElementById("text");
+
         formatOptions.style.display = "none";
         document.getElementById('err-format').style.display = 'none';
         document.getElementById("err-email").style.display = 'none';

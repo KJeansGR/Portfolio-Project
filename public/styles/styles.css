@@ -8,7 +8,7 @@ body{
     justify-items: center;
 }
 body *{
-    border-radius: .1255rem;
+    border-radius: .2rem;
     border-color: rgba(0, 0, 0, 0.25);
     border-width: .1rem;
 }
@@ -18,13 +18,13 @@ label{
     font-weight: bold;
 }
 input{
-    width: fit-content;
+
 }
 #contact-form{
+    align-items: center;
     display: grid;
-    gap: .5rem;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 3fr;
+    gap: 2rem .25rem;
+    grid-template-columns: auto auto auto;
     grid-template-areas:
     "fn ln j"
     "c li e"
@@ -37,8 +37,6 @@ form div{
     display: flex;
     flex-direction: column;
 }
-
-
 #f-name-div{
     grid-area: fn;
 }
@@ -81,8 +79,6 @@ button:active{
     transform: scale(.9);
     opacity: 50%;
 }
-
-
 #format-div{
     display: none;
     flex-direction: row;
@@ -100,7 +96,6 @@ button:active{
 #met-other-div input{
 width: 90%;
 }
-
 .err{
     font-size: clamp(.75rem, 1vw, 1rem);
     font-weight: 300;
@@ -111,4 +106,25 @@ width: 90%;
     font-weight: 400;
     font-size: medium;
 }
-
+footer{
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    position: fixed;
+    bottom: .25rem;
+    left: .25rem;
+}
+@media (max-width: 800px) {
+    #contact-form {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "fn"
+            "ln"
+            "j"
+            "c"
+            "li"
+            "e"
+            "m"
+            "ta"
+            "ft"
+            "sb";
+    }
+}
