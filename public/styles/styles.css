@@ -17,9 +17,7 @@ label{
     font-size: larger;
     font-weight: bold;
 }
-input{
 
-}
 #contact-form{
     align-items: center;
     display: grid;
@@ -112,19 +110,22 @@ footer{
     bottom: .25rem;
     left: .25rem;
 }
-@media (max-width: 800px) {
-    #contact-form {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "fn"
-            "ln"
-            "j"
-            "c"
-            "li"
-            "e"
-            "m"
-            "ta"
-            "ft"
-            "sb";
+
+@media (max-width: 800px) and (orientation: portrait)  {
+    body{
+        font-size: 90%;
     }
+    #contact-form {
+        margin: .25rem;
+        display: flex;
+        flex-direction: column;
+    }
+    div{
+        width: 80vw;
+    }
+    #met-section{
+        display: flex;
+        flex-direction: column;
+    }
+
 }

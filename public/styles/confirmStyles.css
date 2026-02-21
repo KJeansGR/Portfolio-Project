@@ -18,6 +18,7 @@ body *{
     font-size: clamp(1rem, 1.5vw, 1.5rem);
 }
 #confirm-section{
+    margin: 2rem;
     padding: 1rem;
     box-shadow:-.1rem .1rem .25rem black ;
     background-color: antiquewhite;
@@ -53,4 +54,10 @@ button:hover{
 button:active{
     transform: scale(.9);
     opacity: 50%;
+}
+#thankyou-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
 }

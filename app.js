@@ -14,7 +14,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 
-const users = []; // an array of user objects
+let users = {}; // an array of user objects
 let pendingUserInfo = {}; //temp holder for user info before complet confirmation
 
 app.get('/', (req,res) => {
@@ -40,7 +40,9 @@ app.post('/confirm', (req,res) =>{
 })
 
 app.get('/thankyou', (req,res) => {
-    users.push(pendingUserInfo);// push the confirmed pending user to "Actual Users array"
+
+    let idx = Object.keys(users).length + 1;
+    users[`User ${idx}`] = pendingUserInfo;// add pending user to "Actual Users" as an object entry keyed with "User #"
     pendingUserInfo = {}; // clear pending Users info
     res.render('thankyou');
 });
