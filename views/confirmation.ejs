@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="/styles/confirmStyles.css">
+    <link rel="icon" href="/images/chat.png">
+    <script src="/js/ConfirmationPage.js" defer></script>
+    <title>Portfolio Assignment Confirmation</title>
+</head>
+
+<body>
+    <h1>Confirm Information</h1>
+    <section id="confirm-section">
+        <%for (const [k,v] of Object.entries(pendingUserInfo)){%>
+            <% if(v[1]){%>
+                <p id=<%= `${k}` %>>
+                    <strong><%= `${v[0]}`  %></strong>
+                    :
+                    <%=`${v[1]}` %>
+                </p> 
+            <%} else{ %>
+                <p id=<%= `${k}` %>>
+                    <strong><%= `${v[0]}`  %></strong>
+                    : N/A
+                </p> 
+            <% }%>
+        <% } %>
+        
+        <nav id="confirm-btn-options">
+            <a href="/">
+                <button type="button" id="return-btn">No</button>
+            </a>
+            <a href="/thankyou">
+                <button type="button" id="confirm-btn">Submit</button>
+            </a>
+        </nav>
+    </section>
+
+
+
+</body>
+</html>

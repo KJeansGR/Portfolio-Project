@@ -1,19 +1,20 @@
 
 const doc =document.getElementById("contact-form");
-
-let fname =     document.getElementById("f-name").value.trim();
-let lname =     document.getElementById("l-name").value.trim();
-let otherMet =  document.getElementById("other-met").value.trim();
-let email =     document.getElementById("email").value.trim();
-let linkedIn =  document.getElementById("linkedin").value.trim();
-let met =       document.getElementById("met-select");
-let radioHtml = document.getElementById("html");
-let radioText = document.getElementById("text");
 let MailListToggle = document.getElementById("mail-list");
 let formatOptions = document.getElementById("format-div");
 
 
  doc.onsubmit = () => {
+
+    let fname =     document.getElementById("f-name").value.trim();
+    let lname =     document.getElementById("l-name").value.trim();
+    let otherMet =  document.getElementById("other-met").value.trim();
+    let email =     document.getElementById("email").value.trim();
+    let linkedIn =  document.getElementById("linkedin").value.trim();
+    let met =       document.getElementById("met-select");
+    let radioHtml = document.getElementById("html");
+    let radioText = document.getElementById("text");
+
     let isValid = true;
     ResetErrors();
     
@@ -23,7 +24,7 @@ let formatOptions = document.getElementById("format-div");
     if(!lname){invalidFields.push("err-lname");}
 
     //this if checks if there is a value for wither the other input or the select
-    if(met.value == "none" && !otherMet ){
+    if(!met.value && !otherMet ){
         invalidFields.push("err-met");
         invalidFields.push("err-met-other");
     }
