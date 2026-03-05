@@ -4,91 +4,183 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" href="/styles/styles.css">
+    <link rel="Stylesheet" href="/styles/resume.css">
+    <link rel="stylesheet" href="/styles/partialHeader.css">
     <link rel="icon" href="/images/chat.png">
     <script src="/js/contactform.js" defer></script>
     <title>Portfolio Assignment</title>
 </head>
-<body>   
-    <h1>Contact Form</h1>
-    <form id="contact-form" action="/confirm" method="POST">
+<body>
+    <main>
+        <%- include('../views/partials/header.ejs'); %>
+        <header id="resume-header">
+            <section>
+                <h2>K Jeans</h1>
+                <h4>Student • Indie Game Developer • Programmer</h2>
 
-        <div id="f-name-div">
-            <label for="f-name">First Name 
-                <span id="err-fname" class="err">Field Required</span>
-            </label>
-            <input type="text" id="f-name" name="f-name">
-        </div>
-        <div id="l-name-div">
-            <label for="l-name">Last Name
-                <span id="err-lname" class="err">Field Required</span>
-            </label>
-            <input type="text"  id="l-name" name="l-name">
-        </div>
-        <div id="job-div">
-            <label for="job">Job Title
-                <span id="err-job" class="err">Field Required</span>
-            </label>
-            <input type="text"  id="job" name="job">
-        </div>
-        <div id="company-div">
-            <label for="company">Company
-                <span id="err-company" class="err">Field Required</span>
-            </label>
-            <input type="text"  id="company" name="company">
-        </div>
-        <div id="LinkedIn-div">
-            <label for="linkedin">LinkedIn URL
-                <span id="err-linkedIn" class="err">" https://linkedin.com/in/ " Required </span>
-            </label>
-            <input type="text"  id="linkedin" name="linkedin">
-        </div>
-        <div id="email-div">
-            <label for="email">Email Address
-                <span id="err-email" class="err">Field Required</span>
-            </label>
-            <input type="email" id="email" name="email">
-        </div>
+                <div class="contact-info">
+                    <span>📞 |</span>
+                    <span>✉️ </span>
+                    <span>📍  |</span>
+                    <span>🌐<a id="summary-link" href="https://tweaked-studios.vercel.app/" target="_blank"> Personal Website </a></span>
+                </div>
+                <br>
+                <p class="work-auth">
+                    Authorized to work in the U.S. for any employer
+                </p>
+            </section>
+        </header>
+        <hr>
 
-        <section id="met-section">
-            <div id="met-select-div">
-                <label for="met-select">How We Met
-                    <span  id="err-met" class="err">Field Required or Specify Other</span>
-                </label>
-                <select name="met-select" id="met-select">
-                    <option value="">--Choose--</option>
-                    <option value="in-person">in-person</option>
-                    <option value="online">online</option>
-                </select>
-            </div>
-            <div id="met-other-div">
-                <label for="other-met">Other (<span id="other-met-specify">Please Specify </span>)
-                    <span id="err-met-other" class="err">Field Required or Select from menu</span>
-                </label>
-                <input type="text" name="other-met" id="other-met">
-            </div>
+        <section id="summary-section">
+            <!-- <h2 id="summary-h1">Kalif Jeans</h2>
+            <h3 id="summary-h2">Employment Resume</h3>   -->
+            <!-- <figure id="summary-pic">
+                <img src="images/PersonalImage.png" width="120" height="160" alt="personal image">
+                <figcaption>This is an image of me</figcaption>
+            </figure> -->
+
+            <p id="summary-p">
+            I am curretnly studying to gain Bachelors in Software Development and eager to gain more professional experience in the tech indestry.
+            I am a quick learner, focused, and, capable of adapting to anything put in my way.<br>
+            In addition to my technical training, I am also a well rounded employee for other potential jobs any employer may need. 
+            I have educational/tutoring experience, wood technology experience, 
+            kitchen/restaurant experience, and general labor experience.
+            </p>
         </section>
+        <hr>
 
-        <div id="text-area-div">
-            <label for="message">Message</label>
-            <textarea name="message" id="message"></textarea>
-        </div>
-        <div id="final-toggles-div">
-            <label for="mail-list">
-                <input type="checkbox" name="mail-list" id="mail-list">
-                add me to your mailing list
-            </label>
-            <div id="format-div">
-                <span>             
-                    <span id="err-format" class="err">Field Required</span>
-                     Choose an email Format</span>
-                <input type="radio" name="format" value="html" id="html">HTML
-                <input type="radio" name="format" value="text" id="text">Text
-            </div>
-        </div>
-        <button type="submit" id="sub-btn">Submit</button>
-    </form>
+        <section id="Projects-section">
+            <h3>Projects</h3>   
+            <ul>
+
+                <li>
+                    <strong class="li-strong">Portfolio Website:</strong>  
+                    <a id="summary-link" href="https://tweaked-studios.vercel.app/" target="_blank">
+                        https://tweaked-studios.vercel.app/
+                    </a>
+                    <p class="li-span">
+                        Designed and developed a personal portfolio website to showcase ongoing game development projects,
+                        programming work, and 3D art. Built the front-end using React and custom CSS, and implemented
+                        a Node.js backend with deployment on Vercel. Implemented a Custom REST API to generate images of current works 
+                        where needed on the site. Using React created many useful Components such as an image component, also implemented Contexts
+                        and all of the React hooks throughout the website. All design, development, and deployment were completed independently.
+                    </p>
+                </li>
+
+                <li>
+                    <strong class="li-strong">Word Decoder — Word Guessing App:</strong>  
+                    <a id="summary-link" href="https://tweaked-studios.vercel.app/#/Pages/DifficultySelect" target="_blank">Play Demo - </a>
+                    <span class="small-span">https://tweaked-studios.vercel.app/#/Pages/DifficultySelect</span>
+                    <p class="li-span">
+                        Developed a browser-based word puzzle game originally built with HTML and CSS, later redesigned
+                        using React for improved interactivity as well as to challenge my self to improve on a finished project.
+                        Implemented a custom REST API backend to dynamically generate words based on difficulty.
+                    </p>
+                </li>
+
+                <li>
+                    <strong class="li-strong">Game Development — Engine-Level Systems Exploration (Unity DOTS/ECS):</strong>
+                    <p class="li-span">
+                        Conduct ongoing experimentation through independent game development projects
+                        focusing on performance oriented architecture. Designed and
+                        implemented data-oriented-design (DoD) gameplay pipelines using Unity DOTS and ECS, including spatial grid
+                        partitioning, event-driven combat systems, VFX/Entity pooling, and large-scale entity processing.
+
+                        Explored advanced algorithms such as flocking behaviors, A* pathfinding, flow-field navigation,
+                        and procedural generation techniques such as Wave Function Collapse. Built custom tooling to improve development workflows,
+                        including asset import automation between Blender and Unity and other general helpful tools to allow real time adjustments without 
+                        needing to restart gameplay such as a developer console in-game.
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <hr>
+ 
+
+        <section id="technical-skills-section">
+            <h3>Technical Skills</h3>  
+                <ul>
+                    <li><strong class="li-strong">Languages: </strong> C#, Java, JavaScript, React, EJS, HTML, CSS</li>
+                    <li><strong class="li-strong">Backend: </strong> SQL, Node.js, Express.js, SupaBase, Restful API</li>
+                    <li><strong class="li-strong">Game Development: </strong>Unity 3D, Blender, Gimp, Butano, Libresprite/Aseprite</li>
+                    <li><strong class="li-strong">Tools & Platforms: </strong>Git, GitHub, Git Bash GitHub Actions, Vercel, Digital Ocean, Docker</li>
+                </ul>
+        </section>
+        <hr> 
+
+        <br>
+        <section id="experience-section">
+            <h3>Work Experience</h3> 
+                <ul>
+                    <li>
+                        <strong class="li-strong">Independent Software & Game Development</strong>
+                        <span class="small-span">Self-Directed • 2020 - Present</span>
+                        <p class="li-span">
+                            Actively developing software and game projects with a focus on systems design,
+                            crowd simulation, and performance-oriented programming. Built multiple
+                            applications using C#, JavaScript, React, and Unity, including advanced
+                            experimentation with ECS architecture, tooling, and algorithm development.
+                        </p>
+                    </li>    
+                    <li>
+                        <strong class="li-strong">College Math Tutor (Algebra)</strong>
+                        <span class="small-span">Seattle Central Community College • December 2017 – December 2018</span>
+                        <p class="li-span">
+                            Provided one-on-one and small group tutoring to college students, helping strengthen
+                            foundational algebra skills and improve problem-solving confidence. Communicated
+                            complex concepts clearly and in many different ways to be understood by all types of learners.
+                            Sometimes visually and other times with lots of examples.
+                    <li>
+                        <strong class="li-strong">Carpenter Apprentice — Construction (Carpentry, Framing, Deck Building)</strong>
+                        <span class="small-span">December 2016 – December 2017</span>
+                        <p class="li-span">
+                            Worked with multiple crews on residential construction projects and decks
+                            throughout the greater Seattle area. Learned good teamwork skills while working
+                            on job sites.
+                        </p>
+                    </li>
+                    <li>
+                        <strong class="li-strong">Logistics (warehousing , distribution)</strong>
+                        <span class="small-span">Warehouse Associate (Temp) Renton, WA • December 2013 to December 2016</span>
+                    </li>
+                    <li>
+                         <strong class="li-strong">Food Service (Front and back of house)</strong>
+                        <span class="small-span">Dish Washer/Busser Blue C Sushi - Seattle, WA • December 2012 to October 2013</span>
+                </ul>
+        </section>
+        <hr> 
+
+        <section id="Education-section">
+            <h3>Education</h3>   
+                <ul>
+                    <li>  <strong class="li-strong">Bachelors in Software Development </strong>
+                    <span class="small-span">- Green River College (projected graduation is 2028 - 2029)
+                    </span> </li>
+                    <li>  <strong class="li-strong">Associates of Computer Science</strong>
+                    <span class="small-span">- Green River College (graduated 2025)</span>    
+                    <span class="li-span"> 
+                        This degree is transferable to many universities for advanced computer science study. It includes the full calculus <br>
+                        sequence through Calculus IV, engineering physics courses, and a three-course Java focused computer programming sequence.
+                    </span></li>
+                    <li> <strong class="li-strong">General Carpentry Framing Certificate</strong> 
+                    <span class="small-span">- Seattle Central College (2013) 
+                    </span></li>
+
+                </ul>
+        </section>
+        <hr>
+
+        <section id="Education-section">
+            <h3>Things I am Working on Learning</h3>   
+                <ul>
+                    <li>Linux</li>
+                    <li>C++ and Unreal Engine</li>
+                    <li>Vim</li>
+                    <li>Lua and love2d</li>
+                </ul>
+        </section>
+        <hr>
+    </main>
 </body>
-<footer>
-    <a target="_blank"  href="https://github.com/KJeansGR/Portfolio-Project"> Git Hub Repo</a>
-</footer>
 </html>

@@ -1,0 +1,134 @@
+:root{
+    --background-col: rgb(255, 252, 248);
+    --font-col : rgba(0, 0, 0, 1);
+    --font-col-light : rgba(0, 0, 0, 0.71);
+    --alt-background-col: rgba(250, 235, 215, 0.5);
+}
+html {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: var(--background-col);
+    color: var(--font-col);
+    font-size: clamp(.75rem, 1.125vw, 1.5rem);
+}
+body{
+    box-sizing: border-box;
+    margin: 0 auto;
+
+}
+body *{
+    border-radius: .5rem;
+}
+section{
+    margin: 0rem .25rem;
+    padding: 0rem .5rem;
+}
+#summary-section{
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "h1 pic"
+    "h2 pic"
+    "l  pic"
+    "p  p"; */
+}
+#summary-h1{
+    grid-area: h1;
+}
+#summary-h2{
+    grid-area: h2;
+}
+#summary-link{
+
+    grid-area: l;
+}
+#summary-link:hover{
+    text-decoration: underline;
+    opacity: 25%;
+}
+#summary-pic{
+    grid-area: pic;
+    background-color: var(--alt-background-col);
+    box-shadow: 0 .25rem .15rem black;
+}
+figcaption{
+    width: 80%;
+    justify-self: center;
+    text-align: center;
+    font-style: italic;
+    font-size: small;
+}
+#summary-p{
+    font-size: clamp(.75rem, 1vw, 1rem);
+    line-height: 1.5;
+    grid-area: p;
+}
+li{
+    font-size: clamp(.75rem, 1vw, 1rem);
+    line-height: 1.5;
+    padding: .5rem;
+}
+.li-span{
+    font-size: clamp(.75rem, .95vw, 1.25rem);
+    color: var(--font-col-light);
+    display: flex;
+    font-weight:lighter;
+    margin-left: 1rem;
+}
+.small-span, .work-auth{
+    font-size: clamp(.75rem, .9vw, 1rem);
+    color: var(--font-col-light);
+}
+/* portrait mobile*/
+@media (width <= 768px) {
+    html {
+        font-size: clamp(1rem, 3vw, 2rem);
+    }
+    li{
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        line-height: 1.5;
+        padding: .5rem;
+    }
+    }
+
+/* Landscape mobile*/
+@media ( 768px <= width <= 1000px) {
+    html {
+        font-size: clamp(1rem, 2vw, 1.5rem);
+    }
+    li{
+        font-size: clamp(.5rem, 2vw, 1rem);
+        line-height: 1.5;
+        padding: .5rem;
+    }
+}
+
+#resume-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#resume-header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+#resume-header h2 {
+    margin: 0.25rem 0 0.75rem;
+    font-weight: normal;
+    color: #555;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+}
+
+.work-auth {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}

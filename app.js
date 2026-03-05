@@ -18,10 +18,17 @@ let users = {}; // an array of user objects
 let pendingUserInfo = {}; //temp holder for user info before complet confirmation
 
 app.get('/', (req,res) => {
+        res.render('home');
+});
+app.get('/contact', (req,res) => {
     pendingUserInfo={};// clear pending Users info
-    res.render('home');
+    res.render('contactform');
 });
 
+app.get('admin', (req,res) =>{
+
+    res.render('admin', {users});
+});
 app.post('/confirm', (req,res) =>{
     pendingUserInfo = {
         fname:       ["First Name", req.body['f-name']],
@@ -32,15 +39,15 @@ app.post('/confirm', (req,res) =>{
         email:       ["Email", req.body['email']],
         metSelect:   ["How we met", req.body['met-select']],
         otherMet:    ["How we met other specified", req.body['other-met']],
-        mailList:    ["Add to mailing list", req.body['mail-list']? "yes":"no"],
+        mailList:    ["Add to mailing list", req.body['mail-list']? "yes":""],
         format:      ["Mailing format", req.body['format']],
-        message:     ["Message", req.body['message']]
+        message:     ["Message", req.body['message']],
+        timeStamp:   ["Time Stamp", new Date().toLocaleString()]
     };
     res.render('confirmation', {pendingUserInfo})
 })
 
 app.get('/thankyou', (req,res) => {
-
     let idx = Object.keys(users).length + 1;
     users[`User ${idx}`] = pendingUserInfo;// add pending user to "Actual Users" as an object entry keyed with "User #"
     pendingUserInfo = {}; // clear pending Users info
@@ -50,7 +57,7 @@ app.get('/thankyou', (req,res) => {
 //admin route
 app.get('/admin', (req, res)=>{
 
-    res.send(users); // displays the json of orders array
+    res.render('admin', {users}); // displays the json of orders array
 
 })
 

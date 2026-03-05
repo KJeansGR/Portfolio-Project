@@ -8,7 +8,7 @@ body{
     justify-items: center;
 }
 body *{
-    border-radius: .2rem;
+    border-radius: .125rem;
     border-color: rgba(0, 0, 0, 0.25);
     border-width: .1rem;
 }
@@ -19,6 +19,9 @@ label{
 }
 
 #contact-form{
+    background: aliceblue;
+    box-shadow: 0rem .075rem .1rem rgba(0, 0, 0, 0.125);
+    padding: 1rem;
     align-items: center;
     display: grid;
     gap: 2rem .25rem;
@@ -61,21 +64,19 @@ form div{
 }
 #sub-btn{
     grid-area: sb;
-    background-color:  limegreen;
+    background-color:limegreen;
     color: white;
     border: none;
     font-size: large;
     padding: .75rem 0rem;
-    box-shadow: 0 0 .25rem black;
-    transition: all .175s ease-in-out;
+    box-shadow: 0rem .075rem .1rem rgba(0, 0, 0, 0.5);
 }
 button:hover{
-    transform: scale(.975);
-    opacity: 50%;
+    opacity: 80%;
 }
 button:active{
-    transform: scale(.9);
-    opacity: 50%;
+    transform: scale(.975);
+    opacity: 70%;
 }
 #format-div{
     display: none;
@@ -110,7 +111,61 @@ footer{
     bottom: .25rem;
     left: .25rem;
 }
+input, select, textarea{
+    border: none;
+    box-shadow: 0rem .075rem .1rem rgba(0, 0, 0, 0.1);
+}
 
+/* confirm + tankyou */
+#confirm-section{
+    margin: 0rem;
+    padding: 1rem;
+    background:aliceblue;
+    box-shadow: 0rem .075rem .1rem rgba(0, 0, 0, 0.125);
+}
+strong{
+    font-size: clamp(.75rem, 2.25vw, 1.5rem);
+}
+hr{
+    margin-bottom: .125remrem;
+    border: .025rem solid rgba(110, 110, 110, 0.95);
+    width: 100%;
+}
+#confirm-btn-options{
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+}
+a{
+    min-width: fit-content;
+    width: 25%;
+    max-width: 40%;
+}
+#confirm-btn{background-color:  limegreen;}
+#return-btn{background-color:  crimson;}
+button{
+    color: white;
+    border: none;
+    width: 100%;
+    font-size: clamp(.75rem, 2vw, 1.25rem);
+    padding: .75rem 0rem;
+    box-shadow: 0rem .075rem .1rem rgba(0, 0, 0, 0.125);
+    transition: all .175s ease-in-out;
+}
+button:hover{
+    opacity: 80%;
+}
+button:active{
+    transform: scale(.95);
+    opacity: 70%;
+}
+#thankyou-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+/* confirm + tankyou  END */
 @media (max-width: 800px) and (orientation: portrait)  {
     body{
         font-size: 90%;
@@ -127,5 +182,4 @@ footer{
         display: flex;
         flex-direction: column;
     }
-
 }

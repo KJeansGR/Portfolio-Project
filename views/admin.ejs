@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="//code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="//cdn.datatables.net/2.3.7/js/dataTables.js"></script>
+    <link rel="stylesheet" href="/styles/partialHeader.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/2.3.7/css/dataTables.dataTables.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin/userss</title>
+</head>
+<body>
+    <%- include('../views/partials/header.ejs'); %>
+   <table id="users-table" class="display">
+    <% if(!Object.entries(users).length == 0) {%>
+        <thead>
+            <tr>
+                <th> First Name</th>
+                <th> Last Name</th>
+                <th> job</th>
+                <th> company</th>
+                <th> linkedin</th>
+                <th> email</th>
+                <th> Met</th>
+                <th> Met (other)</th>
+                <th> Mail List</th>
+                <th> mailing format</th>
+                <th> message</th>
+                <th> Timestamp</th>     
+            </tr>
+        </thead>
+        
+        <% Object.entries(users).forEach(user => {%>
+            <tr>
+            <% Object.entries(user[1]).forEach(o => {%>
+            <td><%= o[1][1] %></td>
+           <% })%>                 
+            </tr>
+        <% })%>
+    <% }%>
+   </table>
+    <% if(Object.entries(users).length == 0) {%>
+   <figure>
+        <img src="/images/nothing.png" alt="IMage of empty folder">
+    </figure>
+    <% }%>
+
+    <script defer>
+        let table = new DataTable('#users-table');
+    </script>
+</body>
+</html>
+<!-- 
+        fname:       ["First Name", req.body['f-name']],
+        lname:       ["Last Name", req.body['l-name']],
+        job:         ["Job", req.body['job']],
+        company:     ["Company", req.body['company']],
+        linkedin:    ["LinkedIn", req.body['linkedin']],
+        email:       ["Email", req.body['email']],
+        metSelect:   ["How we met", req.body['met-select']],
+        otherMet:    ["How we met other specified", req.body['other-met']],
+        mailList:    ["Add to mailing list", req.body['mail-list']? "yes":"no"],
+        format:      ["Mailing format", req.body['format']],
+        message:     ["Message", req.body['message']] -->

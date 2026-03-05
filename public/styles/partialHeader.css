@@ -1,0 +1,22 @@
+#partial-header{
+    background-color:rgba(240, 248, 255, 0.5);
+    box-shadow: 0rem .1rem .1rem rgba(0, 0, 0, 0.2);
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+#partial-header nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+#partial-header nav a{
+text-decoration: none;
+}
+
+#partial-header nav a:visited{
+    color: black ;
+}
+
+
