@@ -37,14 +37,9 @@ app.get('/contact', (req,res) => {
     res.render('contactform');
 });
 
-//db-test route
-app.get('/db-test', async(req,res) =>{
-    try{
-      const data = await pool.query('SELECT * FROM contacts');
-        res.send(data[0]);      
-    }catch(err){
-        console.log('error in db-test');
-    }
+app.get('/portfolio', (req, res)=>{
+
+    res.render('portfolio');
 });
 
 app.post('/confirm', (req,res) =>{
@@ -112,3 +107,13 @@ console.log(`Server Running at
     http://localhost:${PORT}`)
 });
 
+
+//db-test route
+// app.get('/db-test', async(req,res) =>{
+//     try{
+//       const data = await pool.query('SELECT * FROM contacts');
+//         res.send(data[0]);      
+//     }catch(err){
+//         console.log('error in db-test');
+//     }
+// });
