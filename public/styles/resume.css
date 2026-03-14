@@ -5,10 +5,8 @@
     --alt-background-col: rgba(250, 235, 215, 0.5);
 }
 html {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background: var(--background-col);
     color: var(--font-col);
-    font-size: clamp(.75rem, 1.125vw, 1.5rem);
 }
 body{
     box-sizing: border-box;
@@ -25,12 +23,6 @@ section{
 #summary-section{
     display: flex;
     flex-direction: column;
-    /* grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-    "h1 pic"
-    "h2 pic"
-    "l  pic"
-    "p  p"; */
 }
 #summary-h1{
     grid-area: h1;

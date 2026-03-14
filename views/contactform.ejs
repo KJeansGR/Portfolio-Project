@@ -12,6 +12,11 @@
 <body>   
     <%- include('../views/partials/header.ejs'); %>
     <h1>Contact Form</h1>
+
+    <% errors.forEach(e =>{ %>
+        <p class="err-new"><%= e %></p>
+    <% }) %>
+
     <form id="contact-form" action="/confirm" method="POST">
 
         <div id="f-name-div">

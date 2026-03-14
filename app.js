@@ -2,6 +2,7 @@
 import express from 'express';
 import mysql2 from 'mysql2';
 import dotenv from 'dotenv';
+import { validateForm } from './validation.js';
 
 //load environment variables
 dotenv.config();
@@ -34,11 +35,10 @@ let pendingUserInfo = {};                                               //temp h
 
 app.get('/contact', (req,res) => {
     pendingUserInfo={};                                                 // clear pending Users info when routing to this route
-    res.render('contactform');
+    res.render('contactform', {errors: []});                            // here i pass an empty errors array so that the page will load this prevents having to have an if check in the ejs page, <% if(typeof errors != 'undefined') {%>
 });
 
 app.get('/portfolio', (req, res)=>{
-
     res.render('portfolio');
 });
 
@@ -60,6 +60,16 @@ app.post('/confirm', (req,res) =>{
         message:     ["Message", req.body['message']]
         //timeStamp:   ["Time Stamp", new Date().toLocaleString()]
     };
+
+    
+    const valid = validateForm(pendingUserInfo);
+    if(!valid.isValid){
+        console.log(pendingUserInfo.metSelect[1]);
+        res.render('contactform', {errors: valid.errors});
+        return;
+    }
+
+
     res.render('confirmation', {pendingUserInfo})
 })
 
@@ -89,14 +99,42 @@ app.get('/thankyou', async(req,res) => {
     }
 });
 
-//admin route
-app.get('/admin', async(req, res)=>{
+//admin route for initial page load. i found out a get route is still required otherwise 
+//the page wont initally load, if all i have is a post route
+app.get('/admin', async (req, res) => {
+
+    let isValidLogin = false; 
+    
+    //this SQL query might not be necessary anymore since the route only ever displays login ejs
+    //so this SQL table info never actually is visable from this route.
+    const [users] = await pool.query( 'SELECT * FROM contacts ORDER BY timestamp DESC' );
+
+    res.render('admin', { users, isValidLogin });
+});
+
+//admin route for login, if login credentials are correct, this passes a true boolean to 
+//the ejs page which will "toggle" admin tables on instead of login screen
+app.post('/admin', async(req, res)=>{
+    
+    //these logs are valuable to verify credentials are correctly input
+    console.log("req: " + req.body);
+    console.log("env username:", process.env.Username);
+    console.log("env password:", process.env.Password);
+
+    //turn the request item into an object
+    let r = {un: req.body.un, pw: req.body.pw};
+
+    let isValidLogin = false; 
+
+    //if credentials match then toggle bool correct to to be passes in as a child to the ejs page
+    if(r.un == process.env.Username && r.pw == process.env.Password ){
+        isValidLogin = true;
+    }
 
     try {
         const [users] = await pool.query('SELECT * FROM contacts ORDER BY timestamp DESC'); 
-        res.render('admin', { users });        
-    }
-    catch (err) {
+        res.render('admin', { users, isValidLogin });        
+    } catch (err) {
         console.error('Database error:', err);
         res.status(500).send('Error loading orders: ' + err.message);
     }

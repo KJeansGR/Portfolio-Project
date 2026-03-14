@@ -1,0 +1,67 @@
+main{
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+main *{
+    border-radius: .5rem;
+}
+h1{
+    text-decoration: underline;
+    margin: 3rem;
+    text-align: center;
+}
+.portfolio-section{
+    padding: 1rem;
+    background: linear-gradient(aliceblue, white);
+    box-shadow: -.125rem .125rem .25rem rgba(0, 0, 0, 0.4);
+}
+.portfolio-fig {
+    display: flex;
+}
+.portfolio-fig img{
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+}
+h2, h3{
+    color: rgba(0, 0, 0, 0.75);
+}
+h3{
+    font-style: italic;
+}
+h2 span{
+    font-size: medium;
+}
+section a{
+    text-decoration: none;
+    font-size: large;
+    font-weight: bold;
+}
+section p{
+    padding: 1rem;
+    line-height: 1.5;
+    display: flex;
+    background: rgba(147, 147, 147, 0.1);
+    width: 70%;
+    margin: 0 auto;
+    font-size: clamp(1rem, 1vw, 1.5rem);
+}
+section figure figcaption{
+    font-size: clamp(.5rem, 1.5vw, 1rem);
+    color: rgba(0, 0, 0, 0.524);
+    text-align: center;
+    font-style: italic;
+}
+section figure{
+    display: flex;
+    flex-direction: column;
+}
+.fig-cont{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.fig-cont figure img{
+    width: 100%;
+}

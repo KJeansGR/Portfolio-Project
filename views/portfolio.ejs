@@ -1,20 +1,65 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" href="/styles/styles.css">
+    <link rel="Stylesheet" href="/styles/portfolio.css">
     <link rel="stylesheet" href="/styles/partialHeader.css">
     <link rel="icon" href="/images/chat.png">
     <script src="/js/ConfirmationPage.js" defer></script>
     <title>Portfolio Assignment portfolio page</title>
 </head>
 
-<body>
+    <body>
+        <%- include('../views/partials/header.ejs'); %>
+        <main>
+            <h1>Projects Showcase</h1>
+            <section class="portfolio-section">
+                <h2 class="project-title">Word Decoder - <span>personally developed</span></h2>
+                <h3 class="technologies">Javascript | React | Next.js | HTML-CSS | Vercel | Restful API </h3>
+                <a href="https://tweaked-studios.vercel.app/#/Pages/DifficultySelect" target="_blank">demo</a>
+                <figure class="portfolio-fig">
+                    <img src="/images/portfolioImages/wd_img.webp" alt="word decoder snapshot">
+                    <figcaption>
+                        gameplay of the wordecoder v3
+                    </figcaption>
+                </figure>
+                <p > 
+                    This project was initially made in plain html/css and hosted on github pages. 
+                    Eventually I refactored the project with React and hosted it on vercel. 
+                    After Refactoring, I implemented a custom RESTful word api,
+                    and use a third-party dictionary api for hints.
+                    This project is how i learned React, html, and css.
+                    It is currently playable.
+                    <br>
+                    <br>
+                    the github is private
+                </p>
+            </section>
+            
+            <section class="portfolio-section">
+                <h2 class="project-title">Ice Cream - <span>pair programmed</span></h2>
+                <h3 class="technologies"> Javascript | express.js | node.js | EJS | mySQL | Digital Ocean </h3>
+                <a href="https://github.com/KJeansGR/ice-cream" target="_blank">GitHub repo</a>
+                <div class="fig-cont">
+                    <figure class="portfolio-fig">
+                        <img src="/images/portfolioImages/icecreamHP.webp" alt="icecream project login screen">
+                        <figcaption> image of the icecream service homepage</figcaption>
+                    </figure>
+                    <figure class="portfolio-fig">
+                        <img src="/images/portfolioImages/icecreamDB.webp" alt="database snapshot">
+                        <figcaption> image of the admin database</figcaption>
+                    </figure>
+                </div> 
+                <p > 
+                    This project was a pair program assignment and showcases the 
+                    ability to use and host a express project on digital ocean. 
+                    there are routes that allow a user to post to an SQL server
+                    and there is client side validation
+                </p>
+            </section>
 
-    <%- include('../views/partials/header.ejs'); %>
-    <p>
-        portfolio
-    </p>
-</body>
+        </main>  
+    </body>
 </html>
